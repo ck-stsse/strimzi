@@ -3,9 +3,11 @@
 This document walks you through the prerequisites and steps to setup a Kafka Connector using Strimzi, to connect to a Confluent Cloud cluster.
 ## <a name="_5rja607z0n5"></a>Prerequisites
 1. Docker image with all the connector plugins required for the setup.([Create a Docker image from the base Kafka Connect image](https://strimzi.io/docs/operators/in-development/deploying#creating-new-image-from-base-str) )
-1. TLS certificates from Confluent Cloud.
-1. Confluent Cloud API keys with necessary access to the topics.
-1. [Sample configuration](https://github.com/ck-stsse/strimzi/tree/main/connect)
+1. [TLS certificates](https://letsencrypt.org/certificates/) from Confluent Cloud.
+<img width="1052" alt="tls_ca_crt_confluent_cloud" src="https://github.com/ck-stsse/strimzi/assets/143513451/95124c7e-0659-40d1-bbc8-43468954ce15">
+
+3. Confluent Cloud API keys with necessary access to the topics.
+4. [Sample configuration](https://github.com/ck-stsse/strimzi/tree/main/connect)
 ## <a name="_qwf7k8s4n901"></a>Strimzi Connect Cluster Setup
 1. ### <a name="_wtyoza2j2me"></a>Deploying Kafka Connect
    1. Refer [sample configuration](https://github.com/ck-stsse/strimzi/blob/main/connect/connect.yaml) for Strimzi Connect cluster.
