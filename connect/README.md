@@ -36,6 +36,6 @@ This document walks you through the prerequisites and steps to setup a Kafka Con
 
 <https://docs.confluent.io/cloud/current/cp-component/clients-cloud-config.html#connect-a-net-application-to-ccloud>
 
-1. MySQL Connector Blog- <https://strimzi.io/blog/2020/01/27/deploying-debezium-with-kafkaconnector-resource/>
-1. Authentication - <https://strimzi.io/docs/operators/in-development/configuring#type-KafkaClientAuthenticationPlain-reference>
+2. MySQL Connector Blog- <https://strimzi.io/blog/2020/01/27/deploying-debezium-with-kafkaconnector-resource/>
+3. Authentication - <https://strimzi.io/docs/operators/in-development/configuring#type-KafkaClientAuthenticationPlain-reference>
 
