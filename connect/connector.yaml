@@ -1,0 +1,21 @@
+# Debezium Documentation - https://debezium.io/documentation/reference/0.10/connectors/mysql.html#connector-properties
+apiVersion: "kafka.strimzi.io/v1beta2"
+kind: "KafkaConnector"
+metadata:
+  name: "inventory-connector"
+  labels:
+    strimzi.io/cluster: connect-cluster
+spec:
+  class: io.debezium.connector.mysql.MySqlConnector
+  tasksMax: 1
+  config:
+    database.hostname: localhost
+    database.port: "3306"
+    database.user: "{mysql_username}"
+    database.password: "{mysql_password}"
+    database.server.id: "{mysql_server_id}"
+    database.server.name: "{mysql_server_name}"
+    database.whitelist: "{database_name}"
+    database.history.kafka.bootstrap.servers: "{confluent_cloud_bootstrap_server}"
+    database.history.kafka.topic: "{topic to store the database schema history}"
+    include.schema.changes: "true" 

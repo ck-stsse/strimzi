@@ -1,0 +1,31 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaConnect
+metadata:
+  name: connect-cluster
+  annotations:
+    strimzi.io/use-connector-resources: "true"
+spec:
+  image: ckashyap/cc:latest
+  replicas: 1
+  bootstrapServers: pkc-l7pr2.ap-south-1.aws.confluent.cloud:9092
+  tls:
+    trustedCertificates:
+      - secretName: my-cluster-cluster-ca-cert
+        certificate: ca.crt
+  authentication:
+    type: plain
+    username: 72A4MUWMAJOBSA2F
+    passwordSecret:
+      secretName: my-connect-secret-name
+      password: my-password-field-name
+  config:
+    config.storage.replication.factor: 3
+    offset.storage.replication.factor: 3
+    status.storage.replication.factor: 3
+    config.providers: file
+    config.providers.file.class: org.apache.kafka.common.config.provider.FileConfigProvider
+  externalConfiguration:
+    volumes:
+      - name: connector-config
+        secret:
+          secretName: my-sql-credentials
